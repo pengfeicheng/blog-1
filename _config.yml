@@ -1,0 +1,11 @@
+# Site settings
+title: Senscribe's Blog
+email: senscribe@senscribe.com
+description: > # this means to ignore newlines until "baseurl:"
+  Senscribe的小伙伴们的工作记录
+baseurl: "/blog" # the subpath of your site, e.g. /blog/
+url: "http://senscribe.github.io" # the base hostname & protocol for your site
+github_username:  senscribe
+
+# Build settings
+markdown: kramdown
