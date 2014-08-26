@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "小伙伴们如何开始发表文章？"
+author: wutiantong
 tags: site tips-share
 ---
 
@@ -29,7 +30,9 @@ jekyll的安装方法可以参考<http://jekyllrb.com/docs/installation/>或者<
 
 每个post文件的开头位置必须是Front Matter用于定义这篇blog的一些特定属性，具体格式请参考<http://jekyllrb.com/docs/frontmatter/>。
 
-这些属性中最重要的一个就是`layout`，`layout`所对应的值实际上是位于`_layouts`子目录中的html模版，blog对应的模版就是`post.html`，因此post文件中Front Matter的`layout`取值为`post`（省略后缀名）。
+这些属性中最重要的一个就是`layout`，`layout`所对应的值实际上是位于`_layouts`子目录中的html模版，blog对应的模版就是`post.html`，因此post文件中Front Matter的`layout`取值为`post`（省略后缀名）。   
+其它重要的属性包括：`title`表示blog的标题，`author`表示blog的作者，`tags`表示blog内容对应的标签，相当于关键词。   
+`categories`表示blog的分类，这里注意一下，分类名将会自动填入blog的URL中，比如请看第一篇blog——由jekyll自动生成的欢迎页——它的Front Matter中包括`categories: jekyll update`，你可以看到它的URL则是`http://senscribe.github.io/blog/jekyll/update/2014/08/20/welcome-to-jekyll.html`。不过，我认为一般的blog并不需要特意设置`categories`。
 
 ###进阶技能
 
