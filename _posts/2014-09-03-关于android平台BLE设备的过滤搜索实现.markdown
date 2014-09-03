@@ -13,8 +13,8 @@ tags: site tips-share
     @Override
     public void onLeScan(BluetoothDevice device, int rssi, byte[] scanRecord) {
 				
-				
-    }
+		//在这里处理符合条件的设备		
+    	}
     };
     BluetoothAdapter mBtAdapter = BluetoothAdapter.getDefaultAdapter();
     mBtAdapter.startLeScan(new UUID[]{serviceUUID}, mLeScanCallback);
@@ -35,23 +35,23 @@ tags: site tips-share
 
     try{
 
-    // Get a 16-byte array of what may or may not be the service we're filtering for
-    byte[] service = ArrayUtils.subarray(scanRecord, serviceOffset, serviceOffset + 16);
+    	// Get a 16-byte array of what may or may not be the service we're filtering for
+	 byte[] service = ArrayUtils.subarray(scanRecord, serviceOffset, serviceOffset + 16);
 
-    // The bytes are probably in reverse order, so we need to fix that
-    ArrayUtils.reverse(service);
+    	// The bytes are probably in reverse order, so we need to fix that
+    	ArrayUtils.reverse(service);
 
-    // Get the hex string
-    String discoveredServiceID = bytesToHex(service);
+    	// Get the hex string
+    	String discoveredServiceID = bytesToHex(service);
 
-    // Compare against our service
-    return myServiceID.equals(discoveredServiceID);
+    	// Compare against our service
+    	return myServiceID.equals(discoveredServiceID);
 
     } catch (Exception e){
-    return false;
+    	return false;
     }
 
-    }
+   }
 
 ###改进的解决方案
 	
@@ -63,8 +63,8 @@ tags: site tips-share
     StringBuffer str = new StringBuffer();
     int i = 0;
     for (byte b : scanRecord) {
-     i = (b & 0xff);
-     str.append(Integer.toHexString(i));
+     	i = (b & 0xff);
+     	str.append(Integer.toHexString(i));
     }
     String discoveryServceID = str.toString();
     Log.i(TAG, device.getAddress()+" scanRecord:"+discoveryServceID);
@@ -73,10 +73,10 @@ tags: site tips-share
     //查询是否含有指定的Service UUID信息
     if(discoveryServceID.indexOf(ConstantValues.TRANSFER_SERVICE_READ.toString().replace("-", "")) != -1){
 				
-    Log.i(TAG, device.getAddress() +" has available service UUID");
-    for (BluetoothDevice c : mFoundDevices) {
-    if(c.getAddress().equals(device.getAddress())) return;
-    }
-    mFoundDevices.add(device);
-    Log.i(TAG, "add Ble "+device.getAddress()+" to BleDeviceList");
+	 Log.i(TAG, device.getAddress() +" has available service UUID");
+    	 for (BluetoothDevice c : mFoundDevices) {
+    		if(c.getAddress().equals(device.getAddress())) return;
+	 }
+	 mFoundDevices.add(device);
+    	 Log.i(TAG, "add Ble "+device.getAddress()+" to BleDeviceList");
     }
