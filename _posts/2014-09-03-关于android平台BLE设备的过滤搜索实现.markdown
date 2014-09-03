@@ -25,9 +25,9 @@ tags: site tips-share
 ###网络中的解决方法
 网络中提供的问题解决参考方案：< http://stackoverflow.com/questions/18019161/startlescan-with-128-bit-uuids-doesnt-work-on-native-android-ble-implementation>
 
-在搜索的时候去掉UUID过滤，即
+在搜索的时候去掉UUID过滤，即 mBtAdapter.startLeScan(mLeScanCallback);
 
-    mBtAdapter.startLeScan(mLeScanCallback);
+    //在回调接口onLeScan中对scanRecord数据进行解析判断，以确认该BLE设备是否含有需要的服务
     public static boolean hasMyService(byte[] scanRecord) {
 
     // UUID we want to filter by (without hyphens)
