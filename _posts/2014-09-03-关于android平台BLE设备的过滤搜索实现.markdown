@@ -2,7 +2,6 @@
 layout: post
 title:  "关于android平台BLE设备的过滤搜索遇到的问题及解决方法"
 author: XSeven
-tags: site tips-share
 ---
 
 ###遇到的问题
