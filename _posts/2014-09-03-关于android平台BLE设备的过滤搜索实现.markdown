@@ -7,6 +7,7 @@ tags: site tips-share
 
 ###遇到的问题
 在一般的情况下，根据官方提供的API，使用如下的方法：
+    
     UUID serviceUUID = UUID.fromString("1a664749-82ba-4638-8b54-3c1d5ab44e93");
     BluetoothAdapter.LeScanCallback mLeScanCallback = new BluetoothAdapter.LeScanCallback() {
 			
