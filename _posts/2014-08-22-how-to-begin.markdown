@@ -2,7 +2,7 @@
 layout: post
 title:  "小伙伴们如何开始发表文章？"
 author: wutiantong
-tags: site tips-share
+tags: 本站 使用工具的技巧
 ---
 
 ###简要的回答
