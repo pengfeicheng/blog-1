@@ -86,7 +86,7 @@ Handler handler2 = new Handler(handlerThd2.getLooper());
 
 &nbsp;&nbsp;&nbsp;&nbsp;**2)**一个`Handler`对象只能发送消息到自己的消息处理方法中。虽然在示例一中，两个`Handler`对象同用一个消息队列，但是每个`Handler`对象发送的消息都只会被送到自己的消息处理方法。这是因为`Android`的消息队列处理消息时，会判断该消息与哪个`Handler`是有关联的。
 
-####4、消息的发送与处理[引用：出处]
+####4、消息的发送与处理
 
 `Handler`对象可以把一个`Message`对象或者`Runnable`对象发送到消息队列中，进而在`Handler`对象所在线程中获取`Message`或者`Runnable`对象，消息发送主要有两类体系：
 
@@ -100,6 +100,8 @@ Handler handler2 = new Handler(handlerThd2.getLooper());
 * 与`Message`相对应的消息处理则是在重写了`Handler`对象的`handleMessage(Message)`方法中，处理接收到的`Message`对象。
 * 与`Runnable`相对应的消息处理则是在与`Handler`对象所关联的线程中在某个时间点执行`Runnbale`对象。
 
+ 此段文章引用[承香墨影](http://www.cnblogs.com/plokmju/p/android_Handler.html)的博客。
+ 
 ####5、应用场景
 在日常的开发中在使用到Handler的地方，一般有如下几种：
 
