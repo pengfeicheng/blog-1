@@ -12,26 +12,12 @@
             {{ content }}
         </div>
     </div>
-
-    {% include footer.html %}
     
-    <style type="text/css">
-        #totop {
-            display: block;      
-            position:fixed;
-            right: 100px;
-            bottom: 50px;
-        }
-        .top {
-            color: #233333;
-        }
-    </style>
-    <script type="text/javascript">
-        function totop() {
-            document.write('<div id="totop"><a href="#top" title="top"><div class="top">top</div></a></div>')
-        }
-        totop();
-    </script>
+    <div id="totop">
+        <a href="#top" class="top" title="top">TOP</a>
+    </div>
+    
+    {% include footer.html %}
 
 </body>
 
