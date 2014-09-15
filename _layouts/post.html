@@ -3,13 +3,31 @@ layout: default
 ---
 <div class="post">
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-  </header>
+    <header class="post-header">
+        <h1 class="post-title">{{ page.title }}</h1>
+        <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+    </header>
 
-  <article class="post-content">
-    {{ content }}
-  </article>
+    <article class="post-content">
+        {{ content }}
+    </article>
+    <br>
+    <hr size="2" color="#e1e1e1" width="100%">
+    <br>
+
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script type="text/javascript">
+        var uyan_config = {
+            'title': '',
+            'url': '',
+            'pic': '',
+            'vid': '',
+            'du': '',
+            'su': ''
+        };
+    </script>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1967010"></script>
+    <!-- UY END -->
 
 </div>
